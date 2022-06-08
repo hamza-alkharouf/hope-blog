@@ -1,0 +1,98 @@
+
+# php artisan serve
+artisan : is file php , when we are write php then prss space , write file php(file php).
+serve : is the command artisan you need read and implementation.
+
+# PSR-4 Autoloader(is stratiges)
+name of class is the same name of file name 
+part of namespace represent path of folders 
+
+composer(.json) is the management Autoloading
+file Autoload.php is Responsible for the Autoload process(incloud file without i make incloud in any file)
+
+#in model folder
+//import HasFactory and incloud him this class --
+//"use" inside class :import  blog of trait 
+//"use" outside class :import  class that i make "use" from "namespace" in which I am 
+"HasFactory" can Create a dummy data with a specific number inside the Factory // from use seeder or factory 
+"use HasFactory;"
+
+
+--------------------------cmd-------------------------
+make controller 
+-php artisan make:controller (namefileController)
+
+make return orgin key of .env  (APP_KEY)
+-php artisan key:generate
+
+to back to last edit
+-php artisan migrate::rollback 
+
+make rollback for all migrataion 
+-php artisan migrate::reset
+
+make rollback for all migrataion and make migrate
+-php artisan migrate:refresh
+
+make drop for all migrataion and make migrate (id start from 1 )
+-php artisan migrate:fresh
+
+when are need to add new col and you dont need delete all data , jast you need add new col
+#here will create new file this file you can add any mysql code we want , 
+but if you add col in up you need delete him in down.
+-php artisan make:migration add_image_column_to_categories_table --table=categories
+
+make new file model of migrate
+-php artisan make:model (namefile)// first character is capital and singel name
+
+----add data from factory ---
+make new file factory of factories
+-php artisan make:factory namefileFactory --model=Category// first character is capital and singel name 
+execution code in factory folder
+-php artisan db:seed
+
+----add data from seeder--
+-php artisan make:seeder PostsTableSeeder // first character is capital and plural name 
+-php artisan db:seed
+
+if want use faker  
+-php artisan make:factory PostFactory --model=Post
+-php artisan db:seed
+
+make new make:controller 
+-php artisan make:controller Admin\CategoriesController
+
+
+
+make component 
+-php artisan make:component AdminLayout
+
+
+make controller , function and route 
+-php artisan make:controller Admin\PostsController -r
+
+show list of all route
+-php artisan route:list
+
+ 
+The [C:\wamp64\www\hope-blog\public\storage] link has been connected to [C:\wamp64\www\hope-blog\storage\app/public].
+make pointer from [C:\wamp64\www\hope-blog\public\storage] to  [C:\wamp64\www\hope-blog\storage\app/public]. // this for upload file   
+-php artisan storage:link
+
+To edit files laravel so I can take the files I want to edit
+[\vendor\laravel\framework\src\Illuminate\Pagination\resources\views] To [\resources\views\vendor\pagination]
+-php artisan vendor:publish --tag=laravel-pagination
+
+make observer of project // execution على مستوى السيرفر
+-php artisan  make:observer PostObserver --model=Post
+
+php artisan config:clear
+
+composer require laravel/breeze --dev
+ php artisan breeze:install
+
+
+php artisan make:middleware CheckUserType
+
+
+npm install
